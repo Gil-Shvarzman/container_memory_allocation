@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  cnt_mem_usage:
+    runs-on: ubuntu-latest
+    name: A job to output the memory usage of a container running on the runner
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create container
+        id: cnt_mem
+        uses: ./action.yml
+        with: 
+          my-name: 'Gil'
+      
+      - name: Output memory used
+        run: echo "The memory used was\n${{ steps.cnt_mem.outputs.memory }}" 
