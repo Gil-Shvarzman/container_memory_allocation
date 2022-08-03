@@ -10,7 +10,7 @@ jobs:
 
       - name: Create container
         id: cnt_mem
-        uses: ./action.yml
+        uses: ./
         with: 
           my-name: 'Gil'
       
