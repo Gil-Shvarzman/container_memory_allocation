@@ -1,0 +1,16 @@
+name: 'Container action'
+description: 'Run the container and output memory usage'
+inputs:
+  my-name: 
+    description: 'Authors name'
+    required: true
+    default: 'Gil Shvarzman'
+outputs:
+  memory:
+    description: 'Memory usage of the container'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.my-name }}
